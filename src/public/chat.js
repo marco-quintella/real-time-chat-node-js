@@ -6,9 +6,26 @@ window.onload = () => {
   const content = document.getElementById('content')
   const name = document.getElementById('name')
 
+  socket.on('sendCache', data => {
+    if (data) {
+      messages = data
+      let html = ''
+      for (let i = 0; i < messages.length; i++) {
+        html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>'
+        html += messages[i].message + '<br />'
+      }
+      content.innerHTML = html
+      content.scrollTop = content.scrollHeight
+    }
+  })
+
+  socket.emit('getCache')
+
   socket.on('message', (data) => {
+    console.log('message event', data)
     if (data.message) {
       messages.push(data)
+      socket.emit('setCache', messages)
       let html = ''
       for (let i = 0; i < messages.length; i++) {
         html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>'
