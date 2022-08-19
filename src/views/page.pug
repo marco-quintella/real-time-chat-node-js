@@ -1,0 +1,14 @@
+html 
+  head
+    title= "Real Time Chaat in node JS"
+    script(src='/chat.js')
+    script(src='/socket.io/socket.io.js')
+  body 
+    #content(style='width: 500px; heigth: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
+    .controls 
+      div Name 
+      input#name(style="width: 350px")
+      br
+      div Message:
+      input#field(style="width: 350px")
+      input#send(type="button" value="send")

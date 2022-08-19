@@ -5,7 +5,21 @@
   "repository": "https://github.com/marco-quintella/real-time-chat-node-js.git",
   "author": "Marco Quintella <2om.marco.quintella@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "nodejs",
+    "socket.io",
+    "expressJS",
+    "extwiii",
+    "chat",
+    "app"
+  ],
+  "homepage": "https://github.com/marco-quintella/real-time-chat-node-js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "pug": "^3.0.2",
+    "socket.io": "^4.5.1"
   }
 }
